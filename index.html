@@ -12,7 +12,17 @@
   <title>Bikewatching</title>
 </head>
 <body>
-  <h1>🚴🏼‍♀️ Bikewatching</h1>
+  <header>
+    <h1>🚴🏼‍♀️ Bikewatching</h1>
+    <label>
+      <strong>Filter by time:</strong>
+      <input id = "time-slider" type = "range" min = "-1" max = "1440" value = "-1">
+      <time id = "selected-time" aria-live = "polite"></time>
+      <em id = "any-time">(any time)</em>
+      
+    </label>
+  </header>
+  
   <div id="map">
     <svg></svg>
   </div>

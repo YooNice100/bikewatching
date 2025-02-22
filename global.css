@@ -1,10 +1,43 @@
 body {
-    font: 100%/1.5 system-ui, sans-serif;
-    display: flex;
-    flex-flow: column;
-    max-width: 80em;
-    min-height: 100vh;
-    box-sizing: border-box;
-    margin: auto;
-    padding: 1em;
-  }
+  font: 100%/1.5 system-ui, sans-serif;
+  display: flex;
+  flex-flow: column;
+  max-width: 80em;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: auto;
+  padding: 1em;
+}
+
+header {
+  display: flex;
+  /* justify-content: space-between;  */
+  align-items: baseline; 
+  width: 100%; 
+}
+
+
+label {
+margin-left: auto; 
+/* flex-direction: column; */
+}
+
+time, em{
+display: block; 
+}
+
+em {
+color: gray; 
+font-style: italic;
+align-self: flex-end;
+}
+
+#time-slider {
+width: 100%;
+}
+
+#selected-time, #any-time {
+display: block;
+text-align: right;
+margin-top: 2px;
+} 
