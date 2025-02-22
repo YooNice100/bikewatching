@@ -139,7 +139,7 @@
             (d) => d.end_station_id.trim()
           );
 
-        //   console.log('Stations before updating:', stations);
+          console.log('Stations before updating:', stations);
         //   console.log('Example Station ID:', stations[0]?.short_name);
 
        
@@ -160,7 +160,7 @@
             return station;
             // console.log('Updated Stations:', stations);
           });
-        //   console.log('Updated Stations:', stations);
+          console.log('Updated Stations:', stations);
         console.log("Sample Updated Stations:", stations.slice(0, 10).map(s => ({
             id: s.short_name,
             departures: s.departures,
@@ -174,6 +174,15 @@
         //     }
         // });
 
+        const radiusScale = d3
+        .scaleSqrt()
+        .domain([0, d3.max(stations, (d) => d.totalTraffic)])
+        .range([0, 25]);
+
+
+        circles 
+          .data(stations)
+          .attr('r', (d) => radiusScale(d.totalTraffic))
 
 
 
