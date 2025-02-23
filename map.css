@@ -24,6 +24,68 @@ html, body {
   pointer-events: none;
 }
 
+#map circle {
+  fill: var(--color);
+  stroke: white;
+  stroke-width: 1;
+  opacity: 0.8;
+}
+
 circle {
   pointer-events: auto;
+  fill: var(--color)
+}
+
+circle {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
+}
+
+
+#map circle, .legend > div {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+      in oklch,
+      var(--color-departures) calc(100% * var(--departure-ratio)),
+      var(--color-arrivals)
+  );
+}
+
+
+
+.legend {
+  display: flex;
+  margin-block: 1rem;
+  width: 100%;
+  gap: 1px;
+}
+
+.legend .swatch {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color);
+  border-radius: 3px;
+}
+
+.legend > div {
+  flex: 1;
+  background: var(--color);
+  color: white;
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+circle {
+  display: none;
+}
+
+circle:not([data-total-traffic="0"]) {
+  display: inline;
 }
