@@ -33,7 +33,8 @@ align-self: flex-end;
 }
 
 #time-slider {
-width: 100%;
+width: 150%;
+transform: translateX(-35%);
 }
 
 #selected-time, #any-time {
